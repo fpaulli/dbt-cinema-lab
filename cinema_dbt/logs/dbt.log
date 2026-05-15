@@ -1,0 +1,845 @@
+[0m11:49:50.177841 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109798e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10979a450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10979ad90>]}
+
+
+============================== 11:49:50.180371 | 831cef76-9922-43b9-98cc-4c3e143baf78 ==============================
+[0m11:49:50.180371 [info ] [MainThread]: Running with dbt=1.11.8
+[0m11:49:50.180666 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'write_json': 'True', 'printer_width': '80', 'debug': 'False', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'empty': 'None', 'fail_fast': 'False', 'cache_selected_only': 'False', 'static_parser': 'True', 'profiles_dir': '/Users/paulinafrizen/.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'use_experimental_parser': 'False', 'log_path': '/Users/paulinafrizen/cinema_dbt/logs', 'target_path': 'None', 'introspect': 'True', 'quiet': 'False', 'invocation_command': 'dbt debug', 'use_colors': 'True', 'version_check': 'True', 'log_format': 'default'}
+[0m11:49:50.189475 [info ] [MainThread]: dbt version: 1.11.8
+[0m11:49:50.189659 [info ] [MainThread]: python version: 3.11.5
+[0m11:49:50.189802 [info ] [MainThread]: python path: /Users/paulinafrizen/dbt-env/bin/python3.11
+[0m11:49:50.189921 [info ] [MainThread]: os info: macOS-15.5-arm64-arm-64bit
+[0m11:49:50.227187 [info ] [MainThread]: Using profiles dir at /Users/paulinafrizen/.dbt
+[0m11:49:50.227391 [info ] [MainThread]: Using profiles.yml file at /Users/paulinafrizen/.dbt/profiles.yml
+[0m11:49:50.227518 [info ] [MainThread]: Using dbt_project.yml file at /Users/paulinafrizen/cinema_dbt/dbt_project.yml
+[0m11:49:50.227884 [info ] [MainThread]: adapter type: postgres
+[0m11:49:50.228003 [info ] [MainThread]: adapter version: 1.10.0
+[0m11:49:50.268656 [info ] [MainThread]: Configuration:
+[0m11:49:50.268841 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:49:50.268973 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m11:49:50.269090 [info ] [MainThread]: Required dependencies:
+[0m11:49:50.269242 [debug] [MainThread]: Executing "git --help"
+[0m11:49:50.282340 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:49:50.282822 [debug] [MainThread]: STDERR: "b''"
+[0m11:49:50.282986 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:49:50.283140 [info ] [MainThread]: Connection:
+[0m11:49:50.283293 [info ] [MainThread]:   host: localhost
+[0m11:49:50.283402 [info ] [MainThread]:   port: 5432
+[0m11:49:50.283506 [info ] [MainThread]:   user: postgres
+[0m11:49:50.283607 [info ] [MainThread]:   database: postgres
+[0m11:49:50.283702 [info ] [MainThread]:   schema: cinema_dbt
+[0m11:49:50.283799 [info ] [MainThread]:   connect_timeout: 10
+[0m11:49:50.283900 [info ] [MainThread]:   role: None
+[0m11:49:50.283997 [info ] [MainThread]:   search_path: None
+[0m11:49:50.284093 [info ] [MainThread]:   keepalives_idle: 0
+[0m11:49:50.284189 [info ] [MainThread]:   sslmode: None
+[0m11:49:50.284284 [info ] [MainThread]:   sslcert: None
+[0m11:49:50.284377 [info ] [MainThread]:   sslkey: None
+[0m11:49:50.284474 [info ] [MainThread]:   sslrootcert: None
+[0m11:49:50.284569 [info ] [MainThread]:   application_name: dbt
+[0m11:49:50.284664 [info ] [MainThread]:   retries: 1
+[0m11:49:50.284919 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m11:49:50.842207 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m11:49:50.865268 [debug] [MainThread]: Using postgres connection "debug"
+[0m11:49:50.865450 [debug] [MainThread]: On debug: select 1 as id
+[0m11:49:50.865572 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:49:50.882903 [debug] [MainThread]: SQL status: SELECT 1 in 0.017 seconds
+[0m11:49:50.883347 [debug] [MainThread]: On debug: Close
+[0m11:49:50.883495 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m11:49:50.883639 [info ] [MainThread]: [32mAll checks passed![0m
+[0m11:49:50.886015 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.7437914, "process_in_blocks": "0", "process_kernel_time": 0.17353, "process_mem_max_rss": "125599744", "process_out_blocks": "0", "process_user_time": 0.711092}
+[0m11:49:50.886242 [debug] [MainThread]: Command `dbt debug` succeeded at 11:49:50.886198 after 0.74 seconds
+[0m11:49:50.886380 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m11:49:50.886527 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1096cb290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10983b810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106b5dbd0>]}
+[0m11:49:50.886695 [debug] [MainThread]: Flushing usage events
+[0m11:49:52.078185 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:50:14.558985 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a677d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107afa6d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107afae50>]}
+
+
+============================== 11:50:14.561686 | c39c1848-ab8c-4d20-8e1b-fb17d29bbdc6 ==============================
+[0m11:50:14.561686 [info ] [MainThread]: Running with dbt=1.11.8
+[0m11:50:14.562013 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'log_format': 'default', 'target_path': 'None', 'indirect_selection': 'eager', 'warn_error': 'None', 'partial_parse': 'True', 'introspect': 'True', 'use_experimental_parser': 'False', 'quiet': 'False', 'empty': 'None', 'version_check': 'True', 'printer_width': '80', 'log_cache_events': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'log_path': '/Users/paulinafrizen/cinema_dbt/logs', 'profiles_dir': '/Users/paulinafrizen/.dbt', 'debug': 'False', 'write_json': 'True'}
+[0m11:50:14.569423 [info ] [MainThread]: dbt version: 1.11.8
+[0m11:50:14.569606 [info ] [MainThread]: python version: 3.11.5
+[0m11:50:14.569748 [info ] [MainThread]: python path: /Users/paulinafrizen/dbt-env/bin/python3.11
+[0m11:50:14.569868 [info ] [MainThread]: os info: macOS-15.5-arm64-arm-64bit
+[0m11:50:14.607005 [info ] [MainThread]: Using profiles dir at /Users/paulinafrizen/.dbt
+[0m11:50:14.607205 [info ] [MainThread]: Using profiles.yml file at /Users/paulinafrizen/.dbt/profiles.yml
+[0m11:50:14.607328 [info ] [MainThread]: Using dbt_project.yml file at /Users/paulinafrizen/cinema_dbt/dbt_project.yml
+[0m11:50:14.607552 [info ] [MainThread]: adapter type: postgres
+[0m11:50:14.607703 [info ] [MainThread]: adapter version: 1.10.0
+[0m11:50:14.648385 [info ] [MainThread]: Configuration:
+[0m11:50:14.648573 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:50:14.648705 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m11:50:14.648826 [info ] [MainThread]: Required dependencies:
+[0m11:50:14.648976 [debug] [MainThread]: Executing "git --help"
+[0m11:50:14.662948 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:50:14.663404 [debug] [MainThread]: STDERR: "b''"
+[0m11:50:14.663551 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:50:14.663698 [info ] [MainThread]: Connection:
+[0m11:50:14.663872 [info ] [MainThread]:   host: localhost
+[0m11:50:14.663986 [info ] [MainThread]:   port: 5432
+[0m11:50:14.664101 [info ] [MainThread]:   user: postgres
+[0m11:50:14.664211 [info ] [MainThread]:   database: postgres
+[0m11:50:14.664316 [info ] [MainThread]:   schema: cinema_dbt
+[0m11:50:14.664426 [info ] [MainThread]:   connect_timeout: 10
+[0m11:50:14.664535 [info ] [MainThread]:   role: None
+[0m11:50:14.664648 [info ] [MainThread]:   search_path: None
+[0m11:50:14.664751 [info ] [MainThread]:   keepalives_idle: 0
+[0m11:50:14.664857 [info ] [MainThread]:   sslmode: None
+[0m11:50:14.664969 [info ] [MainThread]:   sslcert: None
+[0m11:50:14.665071 [info ] [MainThread]:   sslkey: None
+[0m11:50:14.665180 [info ] [MainThread]:   sslrootcert: None
+[0m11:50:14.665289 [info ] [MainThread]:   application_name: dbt
+[0m11:50:14.665394 [info ] [MainThread]:   retries: 1
+[0m11:50:14.665657 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m11:50:14.707135 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m11:50:14.727933 [debug] [MainThread]: Using postgres connection "debug"
+[0m11:50:14.728089 [debug] [MainThread]: On debug: select 1 as id
+[0m11:50:14.728201 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:50:14.748275 [debug] [MainThread]: SQL status: SELECT 1 in 0.020 seconds
+[0m11:50:14.748744 [debug] [MainThread]: On debug: Close
+[0m11:50:14.748891 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m11:50:14.749036 [info ] [MainThread]: [32mAll checks passed![0m
+[0m11:50:14.751345 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.22331488, "process_in_blocks": "0", "process_kernel_time": 0.16073, "process_mem_max_rss": "125222912", "process_out_blocks": "0", "process_user_time": 0.697965}
+[0m11:50:14.751559 [debug] [MainThread]: Command `dbt debug` succeeded at 11:50:14.751515 after 0.22 seconds
+[0m11:50:14.751696 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m11:50:14.751846 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107738b90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107ad3950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107816e90>]}
+[0m11:50:14.752021 [debug] [MainThread]: Flushing usage events
+[0m11:50:15.461567 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:50:30.546436 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109751950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1097e6cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109837250>]}
+
+
+============================== 11:50:30.548401 | 2cc654d1-4dc0-48ac-b2ac-4a4d6c7aaf6f ==============================
+[0m11:50:30.548401 [info ] [MainThread]: Running with dbt=1.11.8
+[0m11:50:30.548693 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'printer_width': '80', 'use_colors': 'True', 'empty': 'False', 'partial_parse': 'True', 'fail_fast': 'False', 'profiles_dir': '/Users/paulinafrizen/.dbt', 'version_check': 'True', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'debug': 'False', 'static_parser': 'True', 'quiet': 'False', 'introspect': 'True', 'warn_error': 'None', 'log_path': '/Users/paulinafrizen/cinema_dbt/logs', 'no_print': 'None', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None'}
+[0m11:50:30.626984 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '2cc654d1-4dc0-48ac-b2ac-4a4d6c7aaf6f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109836710>]}
+[0m11:50:30.651104 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '2cc654d1-4dc0-48ac-b2ac-4a4d6c7aaf6f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106b805d0>]}
+[0m11:50:30.651467 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m11:50:30.695672 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m11:50:30.696341 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m11:50:30.696543 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '2cc654d1-4dc0-48ac-b2ac-4a4d6c7aaf6f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108927210>]}
+[0m11:50:31.182173 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '2cc654d1-4dc0-48ac-b2ac-4a4d6c7aaf6f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10aa18d50>]}
+[0m11:50:31.218379 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/paulinafrizen/cinema_dbt/target/manifest.json
+[0m11:50:31.219688 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/paulinafrizen/cinema_dbt/target/semantic_manifest.json
+[0m11:50:31.224332 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '2cc654d1-4dc0-48ac-b2ac-4a4d6c7aaf6f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ac824d0>]}
+[0m11:50:31.224540 [info ] [MainThread]: Found 2 models, 4 data tests, 465 macros
+[0m11:50:31.224685 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2cc654d1-4dc0-48ac-b2ac-4a4d6c7aaf6f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a634e90>]}
+[0m11:50:31.225519 [info ] [MainThread]: 
+[0m11:50:31.225666 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:50:31.225775 [info ] [MainThread]: 
+[0m11:50:31.225957 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:50:31.227526 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m11:50:31.248636 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m11:50:31.248794 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "cinema_dbt", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:50:31.248909 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:50:31.267290 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.018 seconds
+[0m11:50:31.267846 [debug] [ThreadPool]: On list_postgres: Close
+[0m11:50:31.268354 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_postgres, now list_postgres_cinema_dbt)
+[0m11:50:31.271114 [debug] [ThreadPool]: Using postgres connection "list_postgres_cinema_dbt"
+[0m11:50:31.271273 [debug] [ThreadPool]: On list_postgres_cinema_dbt: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "cinema_dbt", "target_name": "dev", "connection_name": "list_postgres_cinema_dbt"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'cinema_dbt'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'cinema_dbt'
+    union all
+    select
+      'postgres' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'cinema_dbt'
+  
+[0m11:50:31.271408 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:50:31.287364 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.016 seconds
+[0m11:50:31.287866 [debug] [ThreadPool]: On list_postgres_cinema_dbt: ROLLBACK
+[0m11:50:31.288159 [debug] [ThreadPool]: On list_postgres_cinema_dbt: Close
+[0m11:50:31.289864 [debug] [MainThread]: Using postgres connection "master"
+[0m11:50:31.290052 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "cinema_dbt", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m11:50:31.290218 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:50:31.302276 [debug] [MainThread]: SQL status: SELECT 0 in 0.012 seconds
+[0m11:50:31.302762 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2cc654d1-4dc0-48ac-b2ac-4a4d6c7aaf6f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a942190>]}
+[0m11:50:31.302960 [debug] [MainThread]: On master: ROLLBACK
+[0m11:50:31.303225 [debug] [MainThread]: On master: COMMIT
+[0m11:50:31.303338 [debug] [MainThread]: Using postgres connection "master"
+[0m11:50:31.303442 [debug] [MainThread]: On master: COMMIT
+[0m11:50:31.303742 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m11:50:31.303855 [debug] [MainThread]: On master: Close
+[0m11:50:31.305148 [debug] [Thread-1 (]: Began running node model.cinema_dbt.my_first_dbt_model
+[0m11:50:31.305375 [info ] [Thread-1 (]: 1 of 2 START sql table model cinema_dbt.my_first_dbt_model ..................... [RUN]
+[0m11:50:31.305571 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_postgres_cinema_dbt, now model.cinema_dbt.my_first_dbt_model)
+[0m11:50:31.305725 [debug] [Thread-1 (]: Began compiling node model.cinema_dbt.my_first_dbt_model
+[0m11:50:31.309377 [debug] [Thread-1 (]: Writing injected SQL for node "model.cinema_dbt.my_first_dbt_model"
+[0m11:50:31.309828 [debug] [Thread-1 (]: Began executing node model.cinema_dbt.my_first_dbt_model
+[0m11:50:31.325747 [debug] [Thread-1 (]: Writing runtime sql for node "model.cinema_dbt.my_first_dbt_model"
+[0m11:50:31.326212 [debug] [Thread-1 (]: Using postgres connection "model.cinema_dbt.my_first_dbt_model"
+[0m11:50:31.326379 [debug] [Thread-1 (]: On model.cinema_dbt.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "cinema_dbt", "target_name": "dev", "node_id": "model.cinema_dbt.my_first_dbt_model"} */
+
+  
+    
+
+  create  table "postgres"."cinema_dbt"."my_first_dbt_model__dbt_tmp"
+  
+  
+    as
+  
+  (
+    /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+  );
+  
+[0m11:50:31.326526 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:50:31.335171 [debug] [Thread-1 (]: SQL status: SELECT 2 in 0.009 seconds
+[0m11:50:31.339208 [debug] [Thread-1 (]: Using postgres connection "model.cinema_dbt.my_first_dbt_model"
+[0m11:50:31.339382 [debug] [Thread-1 (]: On model.cinema_dbt.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "cinema_dbt", "target_name": "dev", "node_id": "model.cinema_dbt.my_first_dbt_model"} */
+alter table "postgres"."cinema_dbt"."my_first_dbt_model__dbt_tmp" rename to "my_first_dbt_model"
+[0m11:50:31.340124 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m11:50:31.347039 [debug] [Thread-1 (]: On model.cinema_dbt.my_first_dbt_model: COMMIT
+[0m11:50:31.347200 [debug] [Thread-1 (]: Using postgres connection "model.cinema_dbt.my_first_dbt_model"
+[0m11:50:31.347332 [debug] [Thread-1 (]: On model.cinema_dbt.my_first_dbt_model: COMMIT
+[0m11:50:31.348007 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m11:50:31.350553 [debug] [Thread-1 (]: Applying DROP to: "postgres"."cinema_dbt"."my_first_dbt_model__dbt_backup"
+[0m11:50:31.352498 [debug] [Thread-1 (]: Using postgres connection "model.cinema_dbt.my_first_dbt_model"
+[0m11:50:31.352653 [debug] [Thread-1 (]: On model.cinema_dbt.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "cinema_dbt", "target_name": "dev", "node_id": "model.cinema_dbt.my_first_dbt_model"} */
+drop table if exists "postgres"."cinema_dbt"."my_first_dbt_model__dbt_backup" cascade
+[0m11:50:31.353162 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.000 seconds
+[0m11:50:31.354112 [debug] [Thread-1 (]: On model.cinema_dbt.my_first_dbt_model: Close
+[0m11:50:31.354913 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2cc654d1-4dc0-48ac-b2ac-4a4d6c7aaf6f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b0b4590>]}
+[0m11:50:31.355161 [info ] [Thread-1 (]: 1 of 2 OK created sql table model cinema_dbt.my_first_dbt_model ................ [[32mSELECT 2[0m in 0.05s]
+[0m11:50:31.355392 [debug] [Thread-1 (]: Finished running node model.cinema_dbt.my_first_dbt_model
+[0m11:50:31.355749 [debug] [Thread-3 (]: Began running node model.cinema_dbt.my_second_dbt_model
+[0m11:50:31.356001 [info ] [Thread-3 (]: 2 of 2 START sql view model cinema_dbt.my_second_dbt_model ..................... [RUN]
+[0m11:50:31.356219 [debug] [Thread-3 (]: Acquiring new postgres connection 'model.cinema_dbt.my_second_dbt_model'
+[0m11:50:31.356350 [debug] [Thread-3 (]: Began compiling node model.cinema_dbt.my_second_dbt_model
+[0m11:50:31.357512 [debug] [Thread-3 (]: Writing injected SQL for node "model.cinema_dbt.my_second_dbt_model"
+[0m11:50:31.357778 [debug] [Thread-3 (]: Began executing node model.cinema_dbt.my_second_dbt_model
+[0m11:50:31.365847 [debug] [Thread-3 (]: Writing runtime sql for node "model.cinema_dbt.my_second_dbt_model"
+[0m11:50:31.366145 [debug] [Thread-3 (]: Using postgres connection "model.cinema_dbt.my_second_dbt_model"
+[0m11:50:31.366296 [debug] [Thread-3 (]: On model.cinema_dbt.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "cinema_dbt", "target_name": "dev", "node_id": "model.cinema_dbt.my_second_dbt_model"} */
+
+  create view "postgres"."cinema_dbt"."my_second_dbt_model__dbt_tmp"
+    
+    
+  as (
+    -- Use the `ref` function to select from other models
+
+select *
+from "postgres"."cinema_dbt"."my_first_dbt_model"
+where id = 1
+  );
+[0m11:50:31.366433 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m11:50:31.376942 [debug] [Thread-3 (]: SQL status: CREATE VIEW in 0.010 seconds
+[0m11:50:31.378217 [debug] [Thread-3 (]: Using postgres connection "model.cinema_dbt.my_second_dbt_model"
+[0m11:50:31.378372 [debug] [Thread-3 (]: On model.cinema_dbt.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "cinema_dbt", "target_name": "dev", "node_id": "model.cinema_dbt.my_second_dbt_model"} */
+alter table "postgres"."cinema_dbt"."my_second_dbt_model__dbt_tmp" rename to "my_second_dbt_model"
+[0m11:50:31.378973 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m11:50:31.379497 [debug] [Thread-3 (]: On model.cinema_dbt.my_second_dbt_model: COMMIT
+[0m11:50:31.379630 [debug] [Thread-3 (]: Using postgres connection "model.cinema_dbt.my_second_dbt_model"
+[0m11:50:31.379749 [debug] [Thread-3 (]: On model.cinema_dbt.my_second_dbt_model: COMMIT
+[0m11:50:31.380521 [debug] [Thread-3 (]: SQL status: COMMIT in 0.001 seconds
+[0m11:50:31.381468 [debug] [Thread-3 (]: Applying DROP to: "postgres"."cinema_dbt"."my_second_dbt_model__dbt_backup"
+[0m11:50:31.382559 [debug] [Thread-3 (]: Using postgres connection "model.cinema_dbt.my_second_dbt_model"
+[0m11:50:31.382705 [debug] [Thread-3 (]: On model.cinema_dbt.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "cinema_dbt", "target_name": "dev", "node_id": "model.cinema_dbt.my_second_dbt_model"} */
+drop view if exists "postgres"."cinema_dbt"."my_second_dbt_model__dbt_backup" cascade
+[0m11:50:31.383119 [debug] [Thread-3 (]: SQL status: DROP VIEW in 0.000 seconds
+[0m11:50:31.383623 [debug] [Thread-3 (]: On model.cinema_dbt.my_second_dbt_model: Close
+[0m11:50:31.383827 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2cc654d1-4dc0-48ac-b2ac-4a4d6c7aaf6f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b122490>]}
+[0m11:50:31.384059 [info ] [Thread-3 (]: 2 of 2 OK created sql view model cinema_dbt.my_second_dbt_model ................ [[32mCREATE VIEW[0m in 0.03s]
+[0m11:50:31.384274 [debug] [Thread-3 (]: Finished running node model.cinema_dbt.my_second_dbt_model
+[0m11:50:31.384754 [debug] [MainThread]: On master: COMMIT
+[0m11:50:31.384876 [debug] [MainThread]: Using postgres connection "master"
+[0m11:50:31.384978 [debug] [MainThread]: On master: COMMIT
+[0m11:50:31.385074 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:50:31.390760 [debug] [MainThread]: SQL status: COMMIT in 0.006 seconds
+[0m11:50:31.390889 [debug] [MainThread]: On master: Close
+[0m11:50:31.391037 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:50:31.391138 [debug] [MainThread]: Connection 'model.cinema_dbt.my_first_dbt_model' was properly closed.
+[0m11:50:31.391228 [debug] [MainThread]: Connection 'model.cinema_dbt.my_second_dbt_model' was properly closed.
+[0m11:50:31.391335 [info ] [MainThread]: 
+[0m11:50:31.391460 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 0.17 seconds (0.17s).
+[0m11:50:31.391764 [debug] [MainThread]: Command end result
+[0m11:50:31.433225 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/paulinafrizen/cinema_dbt/target/manifest.json
+[0m11:50:31.434062 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/paulinafrizen/cinema_dbt/target/semantic_manifest.json
+[0m11:50:31.436436 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/paulinafrizen/cinema_dbt/target/run_results.json
+[0m11:50:31.436577 [info ] [MainThread]: 
+[0m11:50:31.436748 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m11:50:31.436863 [info ] [MainThread]: 
+[0m11:50:31.436991 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m11:50:31.438481 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.9223855, "process_in_blocks": "0", "process_kernel_time": 0.144904, "process_mem_max_rss": "139853824", "process_out_blocks": "0", "process_user_time": 1.336367}
+[0m11:50:31.438659 [debug] [MainThread]: Command `dbt run` succeeded at 11:50:31.438626 after 0.92 seconds
+[0m11:50:31.438815 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104e57dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104e64850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10978d0d0>]}
+[0m11:50:31.438954 [debug] [MainThread]: Flushing usage events
+[0m11:50:32.236223 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:50:33.037095 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107662110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107746d10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107747510>]}
+
+
+============================== 11:50:33.039066 | 50d910dd-50a8-4e1b-baeb-d9af2c793586 ==============================
+[0m11:50:33.039066 [info ] [MainThread]: Running with dbt=1.11.8
+[0m11:50:33.039358 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'cache_selected_only': 'False', 'debug': 'False', 'no_print': 'None', 'empty': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'log_path': '/Users/paulinafrizen/cinema_dbt/logs', 'invocation_command': 'dbt test', 'profiles_dir': '/Users/paulinafrizen/.dbt', 'log_cache_events': 'False', 'printer_width': '80', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'indirect_selection': 'eager', 'log_format': 'default', 'use_experimental_parser': 'False', 'write_json': 'True', 'warn_error': 'None', 'target_path': 'None', 'use_colors': 'True', 'partial_parse': 'True'}
+[0m11:50:33.108625 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '50d910dd-50a8-4e1b-baeb-d9af2c793586', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107723bd0>]}
+[0m11:50:33.133270 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '50d910dd-50a8-4e1b-baeb-d9af2c793586', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104b3cd10>]}
+[0m11:50:33.133602 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m11:50:33.175881 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m11:50:33.224301 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:50:33.224494 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m11:50:33.224609 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:50:33.241089 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '50d910dd-50a8-4e1b-baeb-d9af2c793586', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10883a290>]}
+[0m11:50:33.275773 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/paulinafrizen/cinema_dbt/target/manifest.json
+[0m11:50:33.276659 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/paulinafrizen/cinema_dbt/target/semantic_manifest.json
+[0m11:50:33.310452 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '50d910dd-50a8-4e1b-baeb-d9af2c793586', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1076f4cd0>]}
+[0m11:50:33.310701 [info ] [MainThread]: Found 2 models, 4 data tests, 465 macros
+[0m11:50:33.310856 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '50d910dd-50a8-4e1b-baeb-d9af2c793586', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10881ba50>]}
+[0m11:50:33.311729 [info ] [MainThread]: 
+[0m11:50:33.311882 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:50:33.311994 [info ] [MainThread]: 
+[0m11:50:33.312207 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:50:33.313859 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_cinema_dbt'
+[0m11:50:33.335916 [debug] [ThreadPool]: Using postgres connection "list_postgres_cinema_dbt"
+[0m11:50:33.336094 [debug] [ThreadPool]: On list_postgres_cinema_dbt: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "cinema_dbt", "target_name": "dev", "connection_name": "list_postgres_cinema_dbt"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'cinema_dbt'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'cinema_dbt'
+    union all
+    select
+      'postgres' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'cinema_dbt'
+  
+[0m11:50:33.336228 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:50:33.356496 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.020 seconds
+[0m11:50:33.357116 [debug] [ThreadPool]: On list_postgres_cinema_dbt: ROLLBACK
+[0m11:50:33.357397 [debug] [ThreadPool]: On list_postgres_cinema_dbt: Close
+[0m11:50:33.359524 [debug] [MainThread]: Using postgres connection "master"
+[0m11:50:33.359714 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "cinema_dbt", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m11:50:33.359891 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:50:33.370434 [debug] [MainThread]: SQL status: SELECT 1 in 0.011 seconds
+[0m11:50:33.371034 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '50d910dd-50a8-4e1b-baeb-d9af2c793586', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106fcb990>]}
+[0m11:50:33.371210 [debug] [MainThread]: On master: ROLLBACK
+[0m11:50:33.371503 [debug] [MainThread]: On master: COMMIT
+[0m11:50:33.371610 [debug] [MainThread]: Using postgres connection "master"
+[0m11:50:33.371706 [debug] [MainThread]: On master: COMMIT
+[0m11:50:33.371970 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m11:50:33.372077 [debug] [MainThread]: On master: Close
+[0m11:50:33.372966 [debug] [Thread-1 (]: Began running node test.cinema_dbt.not_null_my_first_dbt_model_id.5fb22c2710
+[0m11:50:33.373134 [debug] [Thread-2 (]: Began running node test.cinema_dbt.not_null_my_second_dbt_model_id.151b76d778
+[0m11:50:33.373313 [info ] [Thread-1 (]: 1 of 4 START test not_null_my_first_dbt_model_id ............................... [RUN]
+[0m11:50:33.373523 [debug] [Thread-3 (]: Began running node test.cinema_dbt.unique_my_first_dbt_model_id.16e066b321
+[0m11:50:33.373715 [debug] [Thread-4 (]: Began running node test.cinema_dbt.unique_my_second_dbt_model_id.57a0f8c493
+[0m11:50:33.373861 [info ] [Thread-2 (]: 2 of 4 START test not_null_my_second_dbt_model_id .............................. [RUN]
+[0m11:50:33.374061 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_postgres_cinema_dbt, now test.cinema_dbt.not_null_my_first_dbt_model_id.5fb22c2710)
+[0m11:50:33.374288 [info ] [Thread-3 (]: 3 of 4 START test unique_my_first_dbt_model_id ................................. [RUN]
+[0m11:50:33.374462 [info ] [Thread-4 (]: 4 of 4 START test unique_my_second_dbt_model_id ................................ [RUN]
+[0m11:50:33.374666 [debug] [Thread-2 (]: Acquiring new postgres connection 'test.cinema_dbt.not_null_my_second_dbt_model_id.151b76d778'
+[0m11:50:33.374800 [debug] [Thread-1 (]: Began compiling node test.cinema_dbt.not_null_my_first_dbt_model_id.5fb22c2710
+[0m11:50:33.374977 [debug] [Thread-3 (]: Acquiring new postgres connection 'test.cinema_dbt.unique_my_first_dbt_model_id.16e066b321'
+[0m11:50:33.375143 [debug] [Thread-4 (]: Acquiring new postgres connection 'test.cinema_dbt.unique_my_second_dbt_model_id.57a0f8c493'
+[0m11:50:33.375270 [debug] [Thread-2 (]: Began compiling node test.cinema_dbt.not_null_my_second_dbt_model_id.151b76d778
+[0m11:50:33.382671 [debug] [Thread-1 (]: Writing injected SQL for node "test.cinema_dbt.not_null_my_first_dbt_model_id.5fb22c2710"
+[0m11:50:33.382844 [debug] [Thread-3 (]: Began compiling node test.cinema_dbt.unique_my_first_dbt_model_id.16e066b321
+[0m11:50:33.382987 [debug] [Thread-4 (]: Began compiling node test.cinema_dbt.unique_my_second_dbt_model_id.57a0f8c493
+[0m11:50:33.384665 [debug] [Thread-2 (]: Writing injected SQL for node "test.cinema_dbt.not_null_my_second_dbt_model_id.151b76d778"
+[0m11:50:33.387381 [debug] [Thread-3 (]: Writing injected SQL for node "test.cinema_dbt.unique_my_first_dbt_model_id.16e066b321"
+[0m11:50:33.389006 [debug] [Thread-4 (]: Writing injected SQL for node "test.cinema_dbt.unique_my_second_dbt_model_id.57a0f8c493"
+[0m11:50:33.389303 [debug] [Thread-1 (]: Began executing node test.cinema_dbt.not_null_my_first_dbt_model_id.5fb22c2710
+[0m11:50:33.389518 [debug] [Thread-2 (]: Began executing node test.cinema_dbt.not_null_my_second_dbt_model_id.151b76d778
+[0m11:50:33.389693 [debug] [Thread-3 (]: Began executing node test.cinema_dbt.unique_my_first_dbt_model_id.16e066b321
+[0m11:50:33.397303 [debug] [Thread-1 (]: Writing runtime sql for node "test.cinema_dbt.not_null_my_first_dbt_model_id.5fb22c2710"
+[0m11:50:33.397474 [debug] [Thread-4 (]: Began executing node test.cinema_dbt.unique_my_second_dbt_model_id.57a0f8c493
+[0m11:50:33.398571 [debug] [Thread-2 (]: Writing runtime sql for node "test.cinema_dbt.not_null_my_second_dbt_model_id.151b76d778"
+[0m11:50:33.399599 [debug] [Thread-3 (]: Writing runtime sql for node "test.cinema_dbt.unique_my_first_dbt_model_id.16e066b321"
+[0m11:50:33.400735 [debug] [Thread-4 (]: Writing runtime sql for node "test.cinema_dbt.unique_my_second_dbt_model_id.57a0f8c493"
+[0m11:50:33.401090 [debug] [Thread-2 (]: Using postgres connection "test.cinema_dbt.not_null_my_second_dbt_model_id.151b76d778"
+[0m11:50:33.401251 [debug] [Thread-1 (]: Using postgres connection "test.cinema_dbt.not_null_my_first_dbt_model_id.5fb22c2710"
+[0m11:50:33.401424 [debug] [Thread-3 (]: Using postgres connection "test.cinema_dbt.unique_my_first_dbt_model_id.16e066b321"
+[0m11:50:33.401578 [debug] [Thread-2 (]: On test.cinema_dbt.not_null_my_second_dbt_model_id.151b76d778: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "cinema_dbt", "target_name": "dev", "node_id": "test.cinema_dbt.not_null_my_second_dbt_model_id.151b76d778"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id
+from "postgres"."cinema_dbt"."my_second_dbt_model"
+where id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m11:50:33.401765 [debug] [Thread-1 (]: On test.cinema_dbt.not_null_my_first_dbt_model_id.5fb22c2710: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "cinema_dbt", "target_name": "dev", "node_id": "test.cinema_dbt.not_null_my_first_dbt_model_id.5fb22c2710"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id
+from "postgres"."cinema_dbt"."my_first_dbt_model"
+where id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m11:50:33.401985 [debug] [Thread-4 (]: Using postgres connection "test.cinema_dbt.unique_my_second_dbt_model_id.57a0f8c493"
+[0m11:50:33.402133 [debug] [Thread-3 (]: On test.cinema_dbt.unique_my_first_dbt_model_id.16e066b321: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "cinema_dbt", "target_name": "dev", "node_id": "test.cinema_dbt.unique_my_first_dbt_model_id.16e066b321"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id as unique_field,
+    count(*) as n_records
+
+from "postgres"."cinema_dbt"."my_first_dbt_model"
+where id is not null
+group by id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m11:50:33.402285 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m11:50:33.402413 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:50:33.402560 [debug] [Thread-4 (]: On test.cinema_dbt.unique_my_second_dbt_model_id.57a0f8c493: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "cinema_dbt", "target_name": "dev", "node_id": "test.cinema_dbt.unique_my_second_dbt_model_id.57a0f8c493"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id as unique_field,
+    count(*) as n_records
+
+from "postgres"."cinema_dbt"."my_second_dbt_model"
+where id is not null
+group by id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m11:50:33.402700 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m11:50:33.402937 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m11:50:33.412222 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.010 seconds
+[0m11:50:33.413966 [debug] [Thread-1 (]: On test.cinema_dbt.not_null_my_first_dbt_model_id.5fb22c2710: ROLLBACK
+[0m11:50:33.414149 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.011 seconds
+[0m11:50:33.414302 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.012 seconds
+[0m11:50:33.414434 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.011 seconds
+[0m11:50:33.415026 [debug] [Thread-3 (]: On test.cinema_dbt.unique_my_first_dbt_model_id.16e066b321: ROLLBACK
+[0m11:50:33.415186 [debug] [Thread-1 (]: On test.cinema_dbt.not_null_my_first_dbt_model_id.5fb22c2710: Close
+[0m11:50:33.415757 [debug] [Thread-2 (]: On test.cinema_dbt.not_null_my_second_dbt_model_id.151b76d778: ROLLBACK
+[0m11:50:33.416271 [debug] [Thread-4 (]: On test.cinema_dbt.unique_my_second_dbt_model_id.57a0f8c493: ROLLBACK
+[0m11:50:33.416550 [error] [Thread-1 (]: 1 of 4 FAIL 1 not_null_my_first_dbt_model_id ................................... [[31mFAIL 1[0m in 0.04s]
+[0m11:50:33.416841 [debug] [Thread-1 (]: Finished running node test.cinema_dbt.not_null_my_first_dbt_model_id.5fb22c2710
+[0m11:50:33.416998 [debug] [Thread-4 (]: On test.cinema_dbt.unique_my_second_dbt_model_id.57a0f8c493: Close
+[0m11:50:33.417135 [debug] [Thread-2 (]: On test.cinema_dbt.not_null_my_second_dbt_model_id.151b76d778: Close
+[0m11:50:33.417256 [debug] [Thread-3 (]: On test.cinema_dbt.unique_my_first_dbt_model_id.16e066b321: Close
+[0m11:50:33.417553 [info ] [Thread-4 (]: 4 of 4 PASS unique_my_second_dbt_model_id ...................................... [[32mPASS[0m in 0.04s]
+[0m11:50:33.417798 [info ] [Thread-2 (]: 2 of 4 PASS not_null_my_second_dbt_model_id .................................... [[32mPASS[0m in 0.04s]
+[0m11:50:33.418026 [info ] [Thread-3 (]: 3 of 4 PASS unique_my_first_dbt_model_id ....................................... [[32mPASS[0m in 0.04s]
+[0m11:50:33.418239 [debug] [Thread-4 (]: Finished running node test.cinema_dbt.unique_my_second_dbt_model_id.57a0f8c493
+[0m11:50:33.418423 [debug] [Thread-2 (]: Finished running node test.cinema_dbt.not_null_my_second_dbt_model_id.151b76d778
+[0m11:50:33.418599 [debug] [Thread-3 (]: Finished running node test.cinema_dbt.unique_my_first_dbt_model_id.16e066b321
+[0m11:50:33.419221 [debug] [MainThread]: On master: COMMIT
+[0m11:50:33.419334 [debug] [MainThread]: Using postgres connection "master"
+[0m11:50:33.419434 [debug] [MainThread]: On master: COMMIT
+[0m11:50:33.419524 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:50:33.424437 [debug] [MainThread]: SQL status: COMMIT in 0.005 seconds
+[0m11:50:33.424549 [debug] [MainThread]: On master: Close
+[0m11:50:33.424684 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:50:33.424777 [debug] [MainThread]: Connection 'test.cinema_dbt.not_null_my_first_dbt_model_id.5fb22c2710' was properly closed.
+[0m11:50:33.424865 [debug] [MainThread]: Connection 'test.cinema_dbt.not_null_my_second_dbt_model_id.151b76d778' was properly closed.
+[0m11:50:33.424951 [debug] [MainThread]: Connection 'test.cinema_dbt.unique_my_first_dbt_model_id.16e066b321' was properly closed.
+[0m11:50:33.425035 [debug] [MainThread]: Connection 'test.cinema_dbt.unique_my_second_dbt_model_id.57a0f8c493' was properly closed.
+[0m11:50:33.425141 [info ] [MainThread]: 
+[0m11:50:33.425268 [info ] [MainThread]: Finished running 4 data tests in 0 hours 0 minutes and 0.11 seconds (0.11s).
+[0m11:50:33.425650 [debug] [MainThread]: Command end result
+[0m11:50:33.438052 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/paulinafrizen/cinema_dbt/target/manifest.json
+[0m11:50:33.438749 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/paulinafrizen/cinema_dbt/target/semantic_manifest.json
+[0m11:50:33.441484 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/paulinafrizen/cinema_dbt/target/run_results.json
+[0m11:50:33.441611 [info ] [MainThread]: 
+[0m11:50:33.441761 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m11:50:33.441884 [info ] [MainThread]: 
+[0m11:50:33.442032 [error] [MainThread]: [31mFailure in test not_null_my_first_dbt_model_id (models/example/schema.yml)[0m
+[0m11:50:33.442174 [error] [MainThread]:   Got 1 result, configured to fail if != 0
+[0m11:50:33.442275 [info ] [MainThread]: 
+[0m11:50:33.442404 [info ] [MainThread]:   compiled code at target/compiled/cinema_dbt/models/example/schema.yml/not_null_my_first_dbt_model_id.sql
+[0m11:50:33.442515 [info ] [MainThread]: 
+[0m11:50:33.442633 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=4
+[0m11:50:33.444077 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 0.4373493, "process_in_blocks": "0", "process_kernel_time": 0.134789, "process_mem_max_rss": "133447680", "process_out_blocks": "0", "process_user_time": 0.894193}
+[0m11:50:33.444251 [debug] [MainThread]: Command `dbt test` failed at 11:50:33.444217 after 0.44 seconds
+[0m11:50:33.444403 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107746ed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107668ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102c6c710>]}
+[0m11:50:33.444547 [debug] [MainThread]: Flushing usage events
+[0m11:50:34.202984 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:50:53.809167 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1074cfbd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107598d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107276590>]}
+
+
+============================== 11:50:53.810959 | 018633a5-daeb-4657-b56d-188279c81886 ==============================
+[0m11:50:53.810959 [info ] [MainThread]: Running with dbt=1.11.8
+[0m11:50:53.811250 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'profiles_dir': '/Users/paulinafrizen/.dbt', 'warn_error': 'None', 'log_path': '/Users/paulinafrizen/cinema_dbt/logs', 'introspect': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'version_check': 'True', 'target_path': 'None', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'static_parser': 'True', 'indirect_selection': 'eager', 'empty': 'None', 'write_json': 'True', 'use_colors': 'True', 'debug': 'False', 'quiet': 'False', 'fail_fast': 'False', 'invocation_command': 'dbt docs generate', 'printer_width': '80'}
+[0m11:50:53.880580 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '018633a5-daeb-4657-b56d-188279c81886', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107533a50>]}
+[0m11:50:53.904911 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '018633a5-daeb-4657-b56d-188279c81886', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104960ad0>]}
+[0m11:50:53.905260 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m11:50:53.948596 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m11:50:53.995839 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:50:53.996023 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m11:50:53.996142 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:50:54.012633 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '018633a5-daeb-4657-b56d-188279c81886', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107cb58d0>]}
+[0m11:50:54.017402 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '018633a5-daeb-4657-b56d-188279c81886', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1084e0090>]}
+[0m11:50:54.017604 [info ] [MainThread]: Found 2 models, 4 data tests, 465 macros
+[0m11:50:54.017763 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '018633a5-daeb-4657-b56d-188279c81886', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1085b62d0>]}
+[0m11:50:54.018633 [info ] [MainThread]: 
+[0m11:50:54.018790 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:50:54.018909 [info ] [MainThread]: 
+[0m11:50:54.019133 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:50:54.020687 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_cinema_dbt'
+[0m11:50:54.044270 [debug] [ThreadPool]: Using postgres connection "list_postgres_cinema_dbt"
+[0m11:50:54.044437 [debug] [ThreadPool]: On list_postgres_cinema_dbt: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "cinema_dbt", "target_name": "dev", "connection_name": "list_postgres_cinema_dbt"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'cinema_dbt'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'cinema_dbt'
+    union all
+    select
+      'postgres' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'cinema_dbt'
+  
+[0m11:50:54.044573 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:50:54.067229 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.023 seconds
+[0m11:50:54.067934 [debug] [ThreadPool]: On list_postgres_cinema_dbt: ROLLBACK
+[0m11:50:54.068207 [debug] [ThreadPool]: On list_postgres_cinema_dbt: Close
+[0m11:50:54.095063 [debug] [MainThread]: Using postgres connection "master"
+[0m11:50:54.095335 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "cinema_dbt", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m11:50:54.095530 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:50:54.108981 [debug] [MainThread]: SQL status: SELECT 1 in 0.013 seconds
+[0m11:50:54.109675 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '018633a5-daeb-4657-b56d-188279c81886', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10836a5d0>]}
+[0m11:50:54.109854 [debug] [MainThread]: On master: ROLLBACK
+[0m11:50:54.110131 [debug] [MainThread]: On master: Close
+[0m11:50:54.111598 [debug] [Thread-1 (]: Began running node model.cinema_dbt.my_first_dbt_model
+[0m11:50:54.111782 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_postgres_cinema_dbt, now model.cinema_dbt.my_first_dbt_model)
+[0m11:50:54.111934 [debug] [Thread-1 (]: Began compiling node model.cinema_dbt.my_first_dbt_model
+[0m11:50:54.115413 [debug] [Thread-1 (]: Writing injected SQL for node "model.cinema_dbt.my_first_dbt_model"
+[0m11:50:54.115732 [debug] [Thread-1 (]: Began executing node model.cinema_dbt.my_first_dbt_model
+[0m11:50:54.116017 [debug] [Thread-1 (]: Finished running node model.cinema_dbt.my_first_dbt_model
+[0m11:50:54.116311 [debug] [Thread-3 (]: Began running node model.cinema_dbt.my_second_dbt_model
+[0m11:50:54.116472 [debug] [Thread-4 (]: Began running node test.cinema_dbt.not_null_my_first_dbt_model_id.5fb22c2710
+[0m11:50:54.116605 [debug] [Thread-2 (]: Began running node test.cinema_dbt.unique_my_first_dbt_model_id.16e066b321
+[0m11:50:54.116826 [debug] [Thread-3 (]: Acquiring new postgres connection 'model.cinema_dbt.my_second_dbt_model'
+[0m11:50:54.117024 [debug] [Thread-4 (]: Acquiring new postgres connection 'test.cinema_dbt.not_null_my_first_dbt_model_id.5fb22c2710'
+[0m11:50:54.117212 [debug] [Thread-2 (]: Acquiring new postgres connection 'test.cinema_dbt.unique_my_first_dbt_model_id.16e066b321'
+[0m11:50:54.117350 [debug] [Thread-3 (]: Began compiling node model.cinema_dbt.my_second_dbt_model
+[0m11:50:54.117482 [debug] [Thread-4 (]: Began compiling node test.cinema_dbt.not_null_my_first_dbt_model_id.5fb22c2710
+[0m11:50:54.117607 [debug] [Thread-2 (]: Began compiling node test.cinema_dbt.unique_my_first_dbt_model_id.16e066b321
+[0m11:50:54.118844 [debug] [Thread-3 (]: Writing injected SQL for node "model.cinema_dbt.my_second_dbt_model"
+[0m11:50:54.123698 [debug] [Thread-4 (]: Writing injected SQL for node "test.cinema_dbt.not_null_my_first_dbt_model_id.5fb22c2710"
+[0m11:50:54.126184 [debug] [Thread-2 (]: Writing injected SQL for node "test.cinema_dbt.unique_my_first_dbt_model_id.16e066b321"
+[0m11:50:54.126767 [debug] [Thread-3 (]: Began executing node model.cinema_dbt.my_second_dbt_model
+[0m11:50:54.126913 [debug] [Thread-4 (]: Began executing node test.cinema_dbt.not_null_my_first_dbt_model_id.5fb22c2710
+[0m11:50:54.127048 [debug] [Thread-2 (]: Began executing node test.cinema_dbt.unique_my_first_dbt_model_id.16e066b321
+[0m11:50:54.127312 [debug] [Thread-3 (]: Finished running node model.cinema_dbt.my_second_dbt_model
+[0m11:50:54.127562 [debug] [Thread-4 (]: Finished running node test.cinema_dbt.not_null_my_first_dbt_model_id.5fb22c2710
+[0m11:50:54.127806 [debug] [Thread-2 (]: Finished running node test.cinema_dbt.unique_my_first_dbt_model_id.16e066b321
+[0m11:50:54.128028 [debug] [Thread-1 (]: Began running node test.cinema_dbt.not_null_my_second_dbt_model_id.151b76d778
+[0m11:50:54.128158 [debug] [Thread-3 (]: Began running node test.cinema_dbt.unique_my_second_dbt_model_id.57a0f8c493
+[0m11:50:54.128365 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.cinema_dbt.my_first_dbt_model, now test.cinema_dbt.not_null_my_second_dbt_model_id.151b76d778)
+[0m11:50:54.128527 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.cinema_dbt.my_second_dbt_model, now test.cinema_dbt.unique_my_second_dbt_model_id.57a0f8c493)
+[0m11:50:54.128668 [debug] [Thread-1 (]: Began compiling node test.cinema_dbt.not_null_my_second_dbt_model_id.151b76d778
+[0m11:50:54.128806 [debug] [Thread-3 (]: Began compiling node test.cinema_dbt.unique_my_second_dbt_model_id.57a0f8c493
+[0m11:50:54.130472 [debug] [Thread-1 (]: Writing injected SQL for node "test.cinema_dbt.not_null_my_second_dbt_model_id.151b76d778"
+[0m11:50:54.132062 [debug] [Thread-3 (]: Writing injected SQL for node "test.cinema_dbt.unique_my_second_dbt_model_id.57a0f8c493"
+[0m11:50:54.132535 [debug] [Thread-1 (]: Began executing node test.cinema_dbt.not_null_my_second_dbt_model_id.151b76d778
+[0m11:50:54.132678 [debug] [Thread-3 (]: Began executing node test.cinema_dbt.unique_my_second_dbt_model_id.57a0f8c493
+[0m11:50:54.132918 [debug] [Thread-1 (]: Finished running node test.cinema_dbt.not_null_my_second_dbt_model_id.151b76d778
+[0m11:50:54.133161 [debug] [Thread-3 (]: Finished running node test.cinema_dbt.unique_my_second_dbt_model_id.57a0f8c493
+[0m11:50:54.133585 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:50:54.133696 [debug] [MainThread]: Connection 'test.cinema_dbt.not_null_my_second_dbt_model_id.151b76d778' was properly closed.
+[0m11:50:54.133796 [debug] [MainThread]: Connection 'test.cinema_dbt.unique_my_second_dbt_model_id.57a0f8c493' was properly closed.
+[0m11:50:54.133882 [debug] [MainThread]: Connection 'test.cinema_dbt.not_null_my_first_dbt_model_id.5fb22c2710' was properly closed.
+[0m11:50:54.133964 [debug] [MainThread]: Connection 'test.cinema_dbt.unique_my_first_dbt_model_id.16e066b321' was properly closed.
+[0m11:50:54.134377 [debug] [MainThread]: Command end result
+[0m11:50:54.167803 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/paulinafrizen/cinema_dbt/target/manifest.json
+[0m11:50:54.168936 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/paulinafrizen/cinema_dbt/target/semantic_manifest.json
+[0m11:50:54.171538 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/paulinafrizen/cinema_dbt/target/run_results.json
+[0m11:50:54.173646 [debug] [MainThread]: Acquiring new postgres connection 'generate_catalog'
+[0m11:50:54.173759 [info ] [MainThread]: Building catalog
+[0m11:50:54.177061 [debug] [ThreadPool]: Acquiring new postgres connection 'postgres.information_schema'
+[0m11:50:54.180147 [debug] [ThreadPool]: Using postgres connection "postgres.information_schema"
+[0m11:50:54.180331 [debug] [ThreadPool]: On postgres.information_schema: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "cinema_dbt", "target_name": "dev", "connection_name": "postgres.information_schema"} */
+
+    
+    
+
+    select
+        'postgres' as table_database,
+        sch.nspname as table_schema,
+        tbl.relname as table_name,
+        case tbl.relkind
+            when 'v' then 'VIEW'
+            when 'm' then 'MATERIALIZED VIEW'
+            else 'BASE TABLE'
+        end as table_type,
+        tbl_desc.description as table_comment,
+        col.attname as column_name,
+        col.attnum as column_index,
+        pg_catalog.format_type(col.atttypid, col.atttypmod) as column_type,
+        col_desc.description as column_comment,
+        pg_get_userbyid(tbl.relowner) as table_owner
+
+    from pg_catalog.pg_namespace sch
+    join pg_catalog.pg_class tbl on tbl.relnamespace = sch.oid
+    join pg_catalog.pg_attribute col on col.attrelid = tbl.oid
+    left outer join pg_catalog.pg_description tbl_desc on (tbl_desc.objoid = tbl.oid and tbl_desc.objsubid = 0)
+    left outer join pg_catalog.pg_description col_desc on (col_desc.objoid = tbl.oid and col_desc.objsubid = col.attnum)
+    where ((upper(sch.nspname) = upper('cinema_dbt') and
+           upper(tbl.relname) = upper('my_first_dbt_model')) or (upper(sch.nspname) = upper('cinema_dbt') and
+           upper(tbl.relname) = upper('my_second_dbt_model')))
+      and not pg_is_other_temp_schema(sch.oid) -- not a temporary schema belonging to another session
+      and tbl.relpersistence in ('p', 'u') -- [p]ermanent table or [u]nlogged table. Exclude [t]emporary tables
+      and tbl.relkind in ('r', 'v', 'f', 'p', 'm') -- o[r]dinary table, [v]iew, [f]oreign table, [p]artitioned table, [m]aterialized view. Other values are [i]ndex, [S]equence, [c]omposite type, [t]OAST table
+      and col.attnum > 0 -- negative numbers are used for system columns such as oid
+      and not col.attisdropped -- column as not been dropped
+
+    order by
+        sch.nspname,
+        tbl.relname,
+        col.attnum
+[0m11:50:54.180499 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:50:54.200218 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.020 seconds
+[0m11:50:54.201109 [debug] [ThreadPool]: On postgres.information_schema: ROLLBACK
+[0m11:50:54.201417 [debug] [ThreadPool]: On postgres.information_schema: Close
+[0m11:50:54.205413 [debug] [MainThread]: Wrote artifact CatalogArtifact to /Users/paulinafrizen/cinema_dbt/target/catalog.json
+[0m11:50:54.218234 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/paulinafrizen/cinema_dbt/target/manifest.json
+[0m11:50:54.219072 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/paulinafrizen/cinema_dbt/target/semantic_manifest.json
+[0m11:50:54.219189 [info ] [MainThread]: Catalog written to /Users/paulinafrizen/cinema_dbt/target/catalog.json
+[0m11:50:54.221408 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 0.44281232, "process_in_blocks": "0", "process_kernel_time": 0.141633, "process_mem_max_rss": "130908160", "process_out_blocks": "0", "process_user_time": 0.896061}
+[0m11:50:54.221624 [debug] [MainThread]: Command `dbt docs generate` succeeded at 11:50:54.221587 after 0.44 seconds
+[0m11:50:54.221744 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m11:50:54.221841 [debug] [MainThread]: Connection 'postgres.information_schema' was properly closed.
+[0m11:50:54.221962 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102a845d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107b18c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108486190>]}
+[0m11:50:54.222112 [debug] [MainThread]: Flushing usage events
+[0m11:50:55.012566 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:50:55.815569 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106e627d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b6f8d50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b71f310>]}
+
+
+============================== 11:50:55.817508 | fd0ad328-53c2-4a65-93b3-e8e2e37f8cab ==============================
+[0m11:50:55.817508 [info ] [MainThread]: Running with dbt=1.11.8
+[0m11:50:55.817802 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'empty': 'None', 'cache_selected_only': 'False', 'log_path': '/Users/paulinafrizen/cinema_dbt/logs', 'profiles_dir': '/Users/paulinafrizen/.dbt', 'invocation_command': 'dbt docs serve', 'partial_parse': 'True', 'introspect': 'True', 'indirect_selection': 'eager', 'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'use_experimental_parser': 'False', 'quiet': 'False', 'target_path': 'None', 'use_colors': 'True', 'fail_fast': 'False', 'printer_width': '80', 'log_cache_events': 'False', 'log_format': 'default', 'write_json': 'True', 'warn_error': 'None', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m11:50:55.886727 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fd0ad328-53c2-4a65-93b3-e8e2e37f8cab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106e4e810>]}
+[0m11:50:55.911104 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'fd0ad328-53c2-4a65-93b3-e8e2e37f8cab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ea0490>]}
